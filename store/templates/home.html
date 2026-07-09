@@ -1,0 +1,1068 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanishq - Exquisite Jewelry Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles and utilities (mimicking Tailwind/Shadcn) */
+        :root {
+            --background: #fdfaf6; /* Light cream/off-white */
+            --foreground: #2d2d2d; /* Dark charcoal */
+            --muted-foreground: #5e5e5e; /* Muted gray */
+            --border: #e0e0e0;
+            --secondary: #f0ead6; /* A softer, light background */
+            --gold: #b8860b; /* A rich, classic gold */
+            --gold-light: #d4af37; /* A slightly lighter gold for accents */
+            --button-luxury-background: #b8860b;
+            --button-luxury-foreground: #ffffff;
+            --button-elegant-background: #ffffff;
+            --button-elegant-foreground: #b8860b;
+        }
+
+        body {
+            font-family: 'Lora', serif; /* Elegant body font */
+            background-color: var(--background);
+            color: var(--foreground);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .min-h-screen {
+            min-height: 100vh;
+        }
+
+        .py-20 {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .mb-16 {
+            margin-bottom: 4rem;
+        }
+
+        .leading-tight {
+            line-height: 1.25;
+        }
+
+        .leading-relaxed {
+            line-height: 1.75;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .space-x-4 > *:not(:first-child) {
+            margin-left: 1rem;
+        }
+
+        .space-x-2 > *:not(:first-child) {
+            margin-left: 0.5rem;
+        }
+
+        .space-x-6 > *:not(:first-child) {
+            margin-left: 1.5rem;
+        }
+
+        .space-x-8 > *:not(:first-child) {
+            margin-left: 2rem;
+        }
+
+        .space-y-2 > *:not(:first-child) {
+            margin-top: 0.5rem;
+        }
+        .space-y-6 > *:not(:first-child) {
+            margin-top: 1.5rem;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .inset-0 {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .z-10 {
+            z-index: 10;
+        }
+
+        .z-50 {
+            z-index: 50;
+        }
+
+        .bg-cover {
+            background-size: cover;
+        }
+
+        .bg-center {
+            background-position: center;
+        }
+
+        .bg-no-repeat {
+            background-repeat: no-repeat;
+        }
+
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        .gap-8 {
+            gap: 2rem;
+        }
+
+        .gap-16 {
+            gap: 4rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .h-16 {
+            height: 4rem;
+        }
+
+        .h-80 {
+            height: 20rem;
+        }
+
+        .h-10 {
+            height: 2.5rem;
+        }
+        .h-12 {
+            height: 3rem;
+        }
+        .h-6 {
+            height: 1.5rem;
+        }
+        .h-5 {
+            height: 1.25rem;
+        }
+        .h-4 {
+            height: 1rem;
+        }
+        .w-6 {
+            width: 1.5rem;
+        }
+        .w-1 {
+            width: 0.25rem;
+        }
+        .w-12 {
+            width: 3rem;
+        }
+        .w-5 {
+            width: 1.25rem;
+        }
+        .w-4 {
+            width: 1rem;
+        }
+
+        .object-cover {
+            object-fit: cover;
+        }
+
+        .text-white {
+            color: #ffffff;
+        }
+
+        .text-white\/90 {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .text-background {
+            color: var(--background);
+        }
+
+        .text-background\/80 {
+            color: rgba(253, 250, 246, 0.8);
+        }
+
+        .text-background\/60 {
+            color: rgba(253, 250, 246, 0.6);
+        }
+
+        .text-foreground {
+            color: var(--foreground);
+        }
+
+        .text-muted-foreground {
+            color: var(--muted-foreground);
+        }
+
+        .text-gold {
+            color: var(--gold);
+        }
+
+        .text-gold-light {
+            color: var(--gold-light);
+        }
+
+        .bg-background {
+            background-color: var(--background);
+        }
+
+        .bg-foreground {
+            background-color: var(--foreground);
+        }
+
+        .bg-secondary\/30 {
+            background-color: rgba(var(--secondary-rgb), 0.3); /* Dynamically generated in JS */
+        }
+
+        .bg-gold\/10 {
+            background-color: rgba(var(--gold-rgb), 0.1); /* Dynamically generated in JS */
+        }
+
+        .bg-background\/10 {
+            background-color: rgba(var(--background-rgb), 0.1); /* Dynamically generated in JS */
+        }
+
+        .border-b {
+            border-bottom-width: 1px;
+        }
+
+        .border-border {
+            border-color: var(--border);
+        }
+
+        .border-0 {
+            border-width: 0;
+        }
+
+        .border-2 {
+            border-width: 2px;
+        }
+
+        .border-white\/50 {
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .border-background\/20 {
+            border-color: rgba(var(--background-rgb), 0.2); /* Dynamically generated in JS */
+        }
+
+        .mt-12 {
+            margin-top: 3rem;
+        }
+
+        .pt-8 {
+            padding-top: 2rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+        }
+
+        .text-5xl {
+            font-size: 3rem;
+        }
+
+        .text-7xl {
+            font-size: 4.5rem;
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .font-medium {
+            font-weight: 500;
+        }
+
+        .flex-shrink-0 {
+            flex-shrink: 0;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .backdrop-blur-sm {
+            backdrop-filter: blur(4px);
+        }
+
+        .sticky {
+            position: sticky;
+        }
+
+        .top-0 {
+            top: 0;
+        }
+
+        .animate-bounce {
+            animation: bounce 1s infinite;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .transition-colors {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .transition-transform {
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 500ms;
+        }
+
+        .transition-opacity {
+            transition-property: opacity;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+        }
+
+        .duration-700 {
+            transition-duration: 700ms;
+        }
+
+        .duration-500 {
+            transition-duration: 500ms;
+        }
+
+        .duration-300 {
+            transition-duration: 300ms;
+        }
+
+        .transform {
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+        }
+
+        .-translate-x-1\/2 {
+            --tw-translate-x: -50%;
+        }
+
+        .-translate-y-2 {
+            --tw-translate-y: -0.5rem;
+        }
+
+        .group:hover .group-hover\:scale-110 {
+            --tw-scale-x: 1.1;
+            --tw-scale-y: 1.1;
+        }
+
+        .group:hover .group-hover\:opacity-100 {
+            opacity: 1;
+        }
+
+        .opacity-0 {
+            opacity: 0;
+        }
+
+        /* Custom fonts (Luxury and Elegant) */
+        .font-luxury {
+            font-family: 'Playfair Display', serif; /* A more "luxury" font */
+        }
+
+        .font-elegant {
+            font-family: 'Lora', serif; /* Keeping Lora for elegance */
+        }
+
+        /* Custom Gradients */
+        .bg-gradient-hero {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+        }
+
+        .from-black\/60 {
+            --tw-gradient-from: rgba(0, 0, 0, 0.6);
+            --tw-gradient-to: rgba(0, 0, 0, 0);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+
+        .via-transparent {
+            --tw-gradient-to: rgba(0, 0, 0, 0);
+            --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to);
+        }
+
+        .to-transparent {
+            --tw-gradient-to: rgba(0, 0, 0, 0);
+        }
+
+        /* Buttons (simulating Shadcn Button variants) */
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.375rem; /* Matches Shadcn default */
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+        }
+
+        .button.size-lg {
+            height: 3rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .button.size-sm {
+            height: 2.25rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .button.size-icon {
+            height: 2.5rem;
+            width: 2.5rem;
+            padding: 0;
+        }
+
+        .button.variant-luxury {
+            background-color: var(--button-luxury-background);
+            color: var(--button-luxury-foreground);
+            border: 1px solid var(--button-luxury-background);
+        }
+        .button.variant-luxury:hover {
+            background-color: #a0740a; /* Slightly darker gold on hover */
+            border-color: #a0740a;
+        }
+
+        .button.variant-elegant {
+            background-color: var(--button-elegant-background);
+            color: var(--button-elegant-foreground);
+            border: 1px solid var(--button-elegant-foreground);
+        }
+        .button.variant-elegant:hover {
+            background-color: var(--button-elegant-foreground);
+            color: var(--button-elegant-background);
+        }
+
+        .button.variant-ghost {
+            background-color: transparent;
+            color: var(--foreground);
+            border: none;
+        }
+        .button.variant-ghost:hover {
+            background-color: rgba(0, 0, 0, 0.05); /* Light hover effect for ghost */
+            color: var(--gold);
+        }
+        .footer .button.variant-ghost {
+            color: var(--background);
+        }
+        .footer .button.variant-ghost:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--gold);
+        }
+
+
+        /* Cards (simulating Shadcn Card) */
+        .card {
+            background-color: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        /* Input (simulating Shadcn Input) */
+        .input {
+            display: flex;
+            height: 2.5rem; /* h-10 equivalent */
+            width: 100%;
+            border-radius: 0.375rem;
+            border: 1px solid var(--border);
+            background-color: var(--background);
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--foreground);
+        }
+        .input::placeholder {
+            color: var(--muted-foreground);
+        }
+        .input:focus {
+            outline: none;
+            border-color: var(--gold); /* Highlight on focus */
+        }
+        .footer .input {
+            background-color: rgba(var(--background-rgb), 0.1);
+            border-color: rgba(var(--background-rgb), 0.2);
+            color: var(--background);
+        }
+        .footer .input::placeholder {
+            color: rgba(var(--background-rgb), 0.6);
+        }
+
+        /* Shadows (custom, mimicking elegant/luxury feel) */
+        .shadow-elegant {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .hover\:shadow-luxury:hover {
+            box-shadow: 0 8px 24px rgba(184, 134, 11, 0.2); /* Gold-tinted shadow */
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 768px) {
+            .md\:flex {
+                display: flex;
+            }
+            .md\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .md\:text-5xl {
+                font-size: 3rem;
+            }
+            .md\:text-7xl {
+                font-size: 4.5rem;
+            }
+            .md\:hidden {
+                display: none;
+            }
+            .md\:mt-0 {
+                margin-top: 0;
+            }
+            .sm\:flex-row {
+                flex-direction: row;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+            .lg\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* Keyframe Animations */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(-25%);
+                animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            }
+            50% {
+                transform: translateY(0);
+                animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+
+    </style>
+    <script>
+        // A simplified way to include icons without a full component system
+        function getIcon(name, className) {
+            const icons = {
+                Award: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 22l5-3 5 3-1.21-8.11"/><path d="M12 15a4 4 0 0 0-2.75 1.5M12 15a4 4 0 0 1 2.75 1.5"/></svg>`,
+                Shield: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+                Heart: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>`,
+                Search: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
+                ShoppingBag: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
+                User: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
+                Menu: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>`,
+                Facebook: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>`,
+                Instagram: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>`,
+                Twitter: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.4-18 11.6 2.2.1 4.4-.6 6-2 1.3 1.3 2.8 2.3 4.6 2.9-2-.4-3.5-1.4-4.7-2.8 1.6.2 3.3-.3 4.7-1.3-1.6-.3-2.9-1.2-3.8-2.5 1-.1 1.9-.2 2.7-.4C7.5 13.9 6 12.2 6 10s1.7-3.6 4-4 3.7 1.2 4.6 2.5c-.7.2-1.4.3-2.2.4C13.8 6.4 15.6 5 17.6 5c1.4-.2 2.5-.6 3.4-1.2"/></svg>`,
+                Youtube: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4A49.17 49.17 0 0 1 12 4c2.72 0 5.4.15 8.07.44A2 2 0 0 1 22 7c0 2.2-.45 4.4-.99 6.6-.54 2.2-1.24 4.4-1.91 6.6C19.8 20.3 16 22 12 22s-7.8-.8-9.4-2c-.67-2.2-1.37-4.4-1.91-6.6-.54-2.2-.99-4.4-.99-6.6a24.12 24.12 0 0 1 0-10Z"/><polygon points="10 8 16 12 10 16 10 8"/></svg>`,
+                Mail: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
+                Phone: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-3.1-3.1A19.79 19.79 0 0 1 2 4.18 2 2 0 0 1 4.18 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
+                MapPin: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,
+            };
+            return icons[name] || '';
+        }
+
+        // Function to convert hex to RGB values for rgba()
+        function hexToRgb(hex) {
+            let r = 0, g = 0, b = 0;
+            // Handle different hex formats
+            if (hex.length === 4) {
+                r = parseInt(hex[1] + hex[1], 16);
+                g = parseInt(hex[2] + hex[2], 16);
+                b = parseInt(hex[3] + hex[3], 16);
+            } else if (hex.length === 7) {
+                r = parseInt(hex.substring(1, 3), 16);
+                g = parseInt(hex.substring(3, 5), 16);
+                b = parseInt(hex.substring(5, 7), 16);
+            }
+            return `${r}, ${g}, ${b}`;
+        }
+
+        // Set dynamic CSS variables for rgba colors
+        document.addEventListener('DOMContentLoaded', () => {
+            const root = document.documentElement;
+            const style = getComputedStyle(root);
+
+            const secondaryColor = style.getPropertyValue('--secondary').trim();
+            const secondaryRgb = hexToRgb(secondaryColor);
+            root.style.setProperty('--secondary-rgb', secondaryRgb);
+
+            const goldColor = style.getPropertyValue('--gold').trim();
+            const goldRgb = hexToRgb(goldColor);
+            root.style.setProperty('--gold-rgb', goldRgb);
+
+            const backgroundColor = style.getPropertyValue('--background').trim();
+            const backgroundRgb = hexToRgb(backgroundColor);
+            root.style.setProperty('--background-rgb', backgroundRgb);
+        });
+
+    </script>
+</head>
+<body>
+    <div class="min-h-screen">
+        <header class="bg-background border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-background/95">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <h1 class="text-2xl font-luxury font-bold text-gold">Tanishq</h1>
+                    </div>
+
+                    <nav class="hidden md:flex items-center space-x-8">
+                        <a href="/category/1/" class="text-foreground hover:text-gold transition-colors font-medium">Gold</a>
+                        <a href="/category/2/" class="text-foreground hover:text-gold transition-colors font-medium">Rings</a>
+                        <a href="/category/3/" class="text-foreground hover:text-gold transition-colors font-medium">Bangles</a>
+                        <a href="/category/4/" class="text-foreground hover:text-gold transition-colors font-medium">Diamonds</a>
+                        <a href="/category/5/" class="text-foreground hover:text-gold transition-colors font-medium">Necklaces</a>
+                    </nav>
+
+                    <div class="flex items-center space-x-4">
+                        <button class="button variant-ghost size-icon hidden md:flex">
+                            <span class="icon" data-lucide="Search"></span>
+                            <script>document.querySelector('[data-lucide="Search"]').innerHTML = getIcon('Search', 'h-5 w-5');</script>
+                        </button>
+                        <button class="button variant-ghost size-icon hidden md:flex">
+                            <span class="icon" data-lucide="Heart"></span>
+                            <script>document.querySelector('[data-lucide="Heart"]').innerHTML = getIcon('Heart', 'h-5 w-5');</script>
+                        </button>
+                        <button class="button variant-ghost size-icon">
+                            <span class="icon" data-lucide="ShoppingBag"></span>
+                            <script>document.querySelector('[data-lucide="ShoppingBag"]').innerHTML = getIcon('ShoppingBag', 'h-5 w-5');</script>
+                        </button>
+                        <button class="button variant-ghost size-icon hidden md:flex">
+                            <span class="icon" data-lucide="User"></span>
+                            <script>document.querySelector('[data-lucide="User"]').innerHTML = getIcon('User', 'h-5 w-5');</script>
+                        </button>
+                        <button class="button variant-ghost size-icon md:hidden">
+                            <span class="icon" data-lucide="Menu"></span>
+                            <script>document.querySelector('[data-lucide="Menu"]').innerHTML = getIcon('Menu', 'h-5 w-5');</script>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="relative min-h-screen flex items-center overflow-hidden">
+            <div
+                class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style="background-image: url('https://via.placeholder.com/1920x1080/D4AF37/FFFFFF?text=Hero+Jewelry+Collection');"
+            >
+                <div class="absolute inset-0 bg-gradient-hero"></div>
+            </div>
+
+            <div class="relative z-10 container mx-auto px-9">
+                <div class="max-w-2xl text-white">
+                    <h1 class="text-5xl md:text-7xl font-luxury font-bold mb-6 leading-tight">
+                        Exquisite
+                        <span class="block text-gold-light">Jewelry</span>
+                        Collection
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-white/90 font-elegant">
+                        Discover our handcrafted collection of timeless pieces that celebrate
+                        tradition, elegance, and the art of fine jewelry making.
+                    </p>
+                    <div class="flex flex-col sm:flex-row ">
+                        <button class="button variant-luxury size-lg text-lg px-8 py-4">
+                            Explore Collection
+                        </button>
+                        <button class="button variant-elegant size-lg text-lg px-8 py-4">
+                            Book Appointment
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+                <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+                    <div class="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-background">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-luxury font-bold mb-6">
+                        Featured Collections
+                    </h2>
+                    <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                        Discover our curated selection of exquisite jewelry pieces,
+                        each telling a unique story of craftsmanship and elegance.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="card group overflow-hidden border-0 shadow-elegant hover:shadow-luxury transition-all duration-500 hover:-translate-y-2"
+                    >
+                        <div class="relative overflow-hidden">
+                            <img
+                                src="https://i.pinimg.com/736x/93/02/e6/9302e64fdfbc77279c08cd5eacb5534b.jpg"
+                                alt="Gold Heritage"
+                                class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-luxury font-semibold mb-3 text-foreground">
+                                Gold Heritage
+                            </h3>
+                            <p class="text-muted-foreground mb-4 leading-relaxed">
+                                Timeless gold jewelry crafted with traditional artistry
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gold font-semibold text-lg">
+                                    Starting from ₹25,000
+                                </span>
+                                <button class="button variant-elegant size-sm">
+                                    View Collection
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="card group overflow-hidden border-0 shadow-elegant hover:shadow-luxury transition-all duration-500 hover:-translate-y-2"
+                    >
+                        <div class="relative overflow-hidden">
+                            <img
+                                src="https://tse4.mm.bing.net/th/id/OIP.QAmpXjVww-TOoUa2AqOZcgHaHa?r=0&pid=Api&P=0&h=180"
+                                alt="Diamond Elegance"
+                                class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-luxury font-semibold mb-3 text-foreground">
+                                Diamond Elegance
+                            </h3>
+                            <p class="text-muted-foreground mb-4 leading-relaxed">
+                                Sparkling diamonds that capture eternal moments
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gold font-semibold text-lg">
+                                    Starting from ₹75,000
+                                </span>
+                                <button class="button variant-elegant size-sm">
+                                    View Collection
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="card group overflow-hidden border-0 shadow-elegant hover:shadow-luxury transition-all duration-500 hover:-translate-y-2"
+                    >
+                        <div class="relative overflow-hidden">
+                            <img
+                                src="https://tse4.mm.bing.net/th/id/OIP.2i5RP9QsNWqD9XlMV2p-VwHaHa?r=0&pid=Api&P=0&h=180"
+                                alt="Traditional Bangles"
+                                class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-luxury font-semibold mb-3 text-foreground">
+                                Traditional Bangles
+                            </h3>
+                            <p class="text-muted-foreground mb-4 leading-relaxed">
+                                Classic bangles celebrating Indian craftsmanship
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gold font-semibold text-lg">
+                                    Starting from ₹15,000
+                                </span>
+                                <button class="button variant-elegant size-sm">
+                                    View Collection
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-secondary/30">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-luxury font-bold mb-6">
+                            The Art of
+                            <span class="block text-gold">Fine Jewelry</span>
+                        </h2>
+                        <p class="text-lg text-muted-foreground mb-8 leading-relaxed">
+                            At Tanishq, we believe that jewelry is more than just an accessory—it's
+                            an expression of emotions, a celebration of moments, and a testament to
+                            timeless elegance. Each piece in our collection is crafted with meticulous
+                            attention to detail by master artisans.
+                        </p>
+
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center">
+                                    <span class="icon" data-lucide="Award-about"></span>
+                                    <script>document.querySelector('[data-lucide="Award-about"]').innerHTML = getIcon('Award', 'w-6 h-6 text-gold');</script>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Master Craftsmanship</h3>
+                                    <p class="text-muted-foreground">Over 165 years of expertise in creating exquisite jewelry pieces that stand the test of time.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center">
+                                    <span class="icon" data-lucide="Shield-about"></span>
+                                    <script>document.querySelector('[data-lucide="Shield-about"]').innerHTML = getIcon('Shield', 'w-6 h-6 text-gold');</script>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Certified Quality</h3>
+                                    <p class="text-muted-foreground">Every piece is hallmarked and certified, ensuring the highest standards of purity and quality.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center">
+                                    <span class="icon" data-lucide="Heart-about"></span>
+                                    <script>document.querySelector('[data-lucide="Heart-about"]').innerHTML = getIcon('Heart', 'w-6 h-6 text-gold');</script>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Emotional Connections</h3>
+                                    <p class="text-muted-foreground">We create jewelry that celebrates life's precious moments and builds lasting memories.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="button variant-luxury size-lg">
+                            Learn Our Story
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="text-center p-8 bg-background rounded-lg shadow-elegant">
+                            <div class="text-4xl font-luxury font-bold text-gold mb-2">165+</div>
+                            <div class="text-muted-foreground">Years of Excellence</div>
+                        </div>
+                        <div class="text-center p-8 bg-background rounded-lg shadow-elegant">
+                            <div class="text-4xl font-luxury font-bold text-gold mb-2">400+</div>
+                            <div class="text-muted-foreground">Stores Worldwide</div>
+                        </div>
+                        <div class="text-center p-8 bg-background rounded-lg shadow-elegant">
+                            <div class="text-4xl font-luxury font-bold text-gold mb-2">2M+</div>
+                            <div class="text-muted-foreground">Happy Customers</div>
+                        </div>
+                        <div class="text-center p-8 bg-background rounded-lg shadow-elegant">
+                            <div class="text-4xl font-luxury font-bold text-gold mb-2">99.9%</div>
+                            <div class="text-muted-foreground">Gold Purity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-foreground text-background footer">
+            <div class="container mx-auto px-4 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-luxury font-bold text-gold mb-4">Tanishq</h3>
+                        <p class="text-background/80 mb-6 leading-relaxed">
+                            Celebrating the art of fine jewelry with timeless elegance and
+                            exceptional craftsmanship for over 165 years.
+                        </p>
+                        <div class="flex space-x-4">
+                            <button class="button variant-ghost size-icon text-background/80 hover:text-gold">
+                                <span class="icon" data-lucide="Facebook"></span>
+                                <script>document.querySelector('[data-lucide="Facebook"]').innerHTML = getIcon('Facebook', 'h-5 w-5');</script>
+                            </button>
+                            <button class="button variant-ghost size-icon text-background/80 hover:text-gold">
+                                <span class="icon" data-lucide="Instagram"></span>
+                                <script>document.querySelector('[data-lucide="Instagram"]').innerHTML = getIcon('Instagram', 'h-5 w-5');</script>
+                            </button>
+                            <button class="button variant-ghost size-icon text-background/80 hover:text-gold">
+                                <span class="icon" data-lucide="Twitter"></span>
+                                <script>document.querySelector('[data-lucide="Twitter"]').innerHTML = getIcon('Twitter', 'h-5 w-5');</script>
+                            </button>
+                            <button class="button variant-ghost size-icon text-background/80 hover:text-gold">
+                                <span class="icon" data-lucide="Youtube"></span>
+                                <script>document.querySelector('[data-lucide="Youtube"]').innerHTML = getIcon('Youtube', 'h-5 w-5');</script>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Collections</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-background/80 hover:text-gold transition-colors">Gold Jewelry</a></li>
+                            <li><a href="#" class="text-background/80 hover:text-gold transition-colors">Diamond Jewelry</a></li>
+                            <li><a href="#" class="text-background/80 hover:text-gold transition-colors">Platinum Jewelry</a></li>
+                            <li><a href="#" class="text-background/80 hover:text-gold transition-colors">Wedding Collection</a></li>
+                            <li><a href="#" class="text-background/80 hover:text-gold transition-colors">Festive Collection</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Customer Care</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-background/80 hover:text-gold transition-colors">Size Guide</a></li>
+                            <li><a href="#" class="text-background/80 hover:text-gold transition-colors">Care Instructions</a></li>
+                            <li><a href="#" class="text-background/80 hover:text-gold transition-colors">Return Policy</a></li>
+                            <li><a href="#" class="text-background/80 hover:text-gold transition-colors">Store Locator</a></li>
+                            <li><a href="#" class="text-background/80 hover:text-gold transition-colors">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Stay Connected</h4>
+                        <p class="text-background/80 mb-4">
+                            Subscribe to get exclusive offers and updates on new collections.
+                        </p>
+                        <div class="flex space-x-2 mb-4">
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                class="input bg-background/10 border-background/20 text-background placeholder:text-background/60"
+                            />
+                            <button class="button variant-luxury size-sm">
+                                Subscribe
+                            </button>
+                        </div>
+                        <div class="space-y-2 text-sm text-background/80">
+                            <div class="flex items-center space-x-2">
+                                <span class="icon" data-lucide="Phone"></span>
+                                <script>document.querySelector('[data-lucide="Phone"]').innerHTML = getIcon('Phone', 'h-4 w-4');</script>
+                                <span>1800-266-0123</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="icon" data-lucide="Mail"></span>
+                                <script>document.querySelector('[data-lucide="Mail"]').innerHTML = getIcon('Mail', 'h-4 w-4');</script>
+                                <span>info@tanishq.co.in</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-background/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-background/60 text-sm">
+                        © 2024 Tanishq. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-background/60 hover:text-gold text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-background/60 hover:text-gold text-sm transition-colors">Terms of Service</a>
+                        <a href="#" class="text-background/60 hover:text-gold text-sm transition-colors">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
